@@ -69,18 +69,25 @@
             position: absolute;
             width: 10px;
             height: 10px;
-            background-color: #FFC0CB; /* Light pink */
             border-radius: 50%;
             animation: confetti-fall 2s ease-out infinite;
             transform-origin: center center;
         }
 
         .heart:nth-child(2n) {
-            background-color: #FF69B4; /* Medium pink */
+            background-color: #FFB6C1; /* Light pink */
         }
 
         .heart:nth-child(3n) {
-            background-color: #FF1493; /* Dark pink */
+            background-color: #FF69B4; /* Dark pink */
+        }
+
+        .heart:nth-child(4n) {
+            background-color: #FFA07A; /* Light red */
+        }
+
+        .heart:nth-child(5n) {
+            background-color: #DC143C; /* Dark red */
         }
 
         #response {
@@ -141,7 +148,7 @@
 
         function generateConfetti() {
             const confettiContainer = document.getElementById('confetti');
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 100; i++) { // Increased number of confetti
                 const heart = document.createElement('div');
                 heart.classList.add('heart');
                 heart.style.left = Math.random() * 100 + '%';

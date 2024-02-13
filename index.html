@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #FC94AF;
+            background-color: #ffcccc; /* Changed background color */
         }
 
         .container {
@@ -49,22 +49,12 @@
             overflow: hidden;
         }
 
-        .heart {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #FF4500;
-            transform: rotate(45deg);
-            border-radius: 50%;
-            animation: confetti 2s ease-out infinite;
-        }
-
-        @keyframes confetti {
+        @keyframes confetti-fall {
             0% {
-                transform: translateY(0) rotate(45deg);
+                transform: translateY(-50px) rotate(0deg);
             }
             100% {
-                transform: translateY(300px) rotate(45deg);
+                transform: translateY(400px) rotate(360deg);
             }
         }
 
@@ -79,13 +69,13 @@
     <div class="container">
         <header>
             <img src="cat.jpg" alt="Cat Image" class="cat-image">
-            <h1>Will You Be My Valentine, dalz?</h1>
+            <h1>will you be my valentine, dalz?</h1>
         </header>
         <main>
             <button id="yesBtn">Yes</button>
             <button id="noBtn">No</button>
+            <p id="response"></p> <!-- Moved below the buttons -->
             <div id="confetti"></div>
-            <p id="response"></p>
         </main>
     </div>
     <script>
@@ -104,6 +94,7 @@
                 heart.classList.add('heart');
                 heart.style.left = Math.random() * 100 + '%';
                 heart.style.animationDuration = Math.random() * 3 + 1 + 's';
+                heart.style.animationDelay = Math.random() * 2 + 's';
                 confettiContainer.appendChild(heart);
                 setTimeout(() => {
                     heart.remove();
@@ -113,3 +104,4 @@
     </script>
 </body>
 </html>
+

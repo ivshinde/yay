@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #ffcccc; /* Changed background color */
         }
 
@@ -23,23 +24,24 @@
             margin-bottom: 20px;
         }
 
-        .cat-image {
-            width: 200px;
-            border-radius: 50%;
-        }
-
         h1 {
-            color: white;
+            color: #ff6666; /* Changed headline color */
         }
 
         button {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #FFA500;
+            background-color: #ff9999; /* Changed button color */
             color: white;
             border: none;
             cursor: pointer;
             margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff6666; /* Button color on hover */
         }
 
         #confetti {
@@ -58,8 +60,17 @@
             }
         }
 
+        .heart {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FF4500;
+            border-radius: 50%;
+            animation: confetti-fall 2s ease-out infinite;
+        }
+
         #response {
-            color: white;
+            color: #ff6666; /* Changed response text color */
             font-size: 24px;
             margin-top: 20px;
         }
@@ -68,7 +79,21 @@
 <body>
     <div class="container">
         <header>
-            <img src="cat.jpg" alt="Cat Image" class="cat-image">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+                <!-- Body -->
+                <circle cx="100" cy="100" r="90" fill="orange" />
+                <!-- Head -->
+                <circle cx="140" cy="80" r="30" fill="orange" />
+                <!-- Eyes -->
+                <circle cx="130" cy="70" r="5" fill="white" />
+                <circle cx="150" cy="70" r="5" fill="white" />
+                <!-- Nose -->
+                <circle cx="140" cy="90" r="3" fill="black" />
+                <!-- Ears -->
+                <polygon points="120,40 160,40 140,70" fill="orange" />
+                <!-- Mouth -->
+                <path d="M130 100 Q140 120 150 100" fill="none" stroke="black" />
+            </svg>
             <h1>will you be my valentine, dalz?</h1>
         </header>
         <main>

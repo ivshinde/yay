@@ -95,6 +95,11 @@
             font-size: 24px;
             margin-top: 20px;
         }
+
+        #yayMsg {
+            color: #ff6666; /* Same color as response text */
+            font-size: 36px; /* Bigger font size */
+        }
     </style>
 </head>
 <body>
@@ -140,6 +145,7 @@
     <script>
         document.getElementById('yesBtn').addEventListener('click', function() {
             generateConfetti();
+            document.getElementById('response').innerHTML = '<span id="yayMsg">yayyyy muahhhh</span>&lt;3'; // Display message with heart symbol
         });
 
         document.getElementById('noBtn').addEventListener('click', function() {

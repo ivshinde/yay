@@ -2,6 +2,10 @@ document.getElementById('yesBtn').addEventListener('click', function() {
     generateConfetti();
 });
 
+document.getElementById('noBtn').addEventListener('click', function() {
+    document.getElementById('response').innerText = "Nice try, try again!";
+});
+
 function generateConfetti() {
     const confettiContainer = document.getElementById('confetti');
     for (let i = 0; i < 50; i++) {

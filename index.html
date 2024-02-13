@@ -47,19 +47,20 @@
         #confetti {
             position: absolute;
             top: 0;
+            left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             pointer-events: none; /* Make sure confetti doesn't interfere with button clicks */
             z-index: -1; /* Move confetti behind other elements */
         }
 
         @keyframes confetti-fall {
             0% {
-                transform: translateY(-100vh) rotate(0deg) scale(0);
+                transform: translateY(-200vh) rotate(0deg) scale(0);
                 opacity: 0;
             }
             100% {
-                transform: translateY(100vh) rotate(360deg) scale(1);
+                transform: translateY(200vh) rotate(360deg) scale(1);
                 opacity: 1;
             }
         }
@@ -86,26 +87,26 @@
         <header>
             <svg width="200" height="200" viewBox="0 0 200 200">
                 <!-- Body -->
-                <circle cx="100" cy="120" r="70" fill="#FFD700" />
+                <circle cx="100" cy="130" r="70" fill="#FFA500" />
                 <!-- Head -->
-                <circle cx="100" cy="80" r="40" fill="#FFD700" />
+                <circle cx="100" cy="90" r="40" fill="#FFA500" />
+                <!-- Ears -->
+                <polygon points="60,50 80,20 120,20 140,50" fill="#FFA500" />
                 <!-- Eyes -->
-                <circle cx="80" cy="70" r="8" fill="white" />
-                <circle cx="120" cy="70" r="8" fill="white" />
+                <circle cx="80" cy="80" r="8" fill="white" />
+                <circle cx="120" cy="80" r="8" fill="white" />
                 <!-- Pupils -->
-                <circle cx="80" cy="70" r="4" fill="black" />
-                <circle cx="120" cy="70" r="4" fill="black" />
+                <circle cx="80" cy="80" r="4" fill="black" />
+                <circle cx="120" cy="80" r="4" fill="black" />
                 <!-- Nose -->
-                <circle cx="100" cy="90" r="5" fill="pink" />
+                <circle cx="100" cy="100" r="5" fill="pink" />
+                <!-- Mouth -->
+                <path d="M80 110 Q100 130 120 110" fill="none" stroke="black" />
                 <!-- Whiskers -->
-                <line x1="85" y1="85" x2="70" y2="90" stroke="black" stroke-width="2" />
-                <line x1="115" y1="85" x2="130" y2="90" stroke="black" stroke-width="2" />
-                <line x1="85" y1="100" x2="70" y2="100" stroke="black" stroke-width="2" />
-                <line x1="115" y1="100" x2="130" y2="100" stroke="black" stroke-width="2" />
-                <line x1="85" y1="115" x2="70" y2="110" stroke="black" stroke-width="2" />
-                <line x1="115" y1="115" x2="130" y2="110" stroke="black" stroke-width="2" />
+                <line x1="70" y1="100" x2="30" y2="110" stroke="black" stroke-width="2" />
+                <line x1="130" y1="100" x2="170" y2="110" stroke="black" stroke-width="2" />
             </svg>
-            <h1>will you be my valentine, dalz?</h1>
+            <h1>Will you be my valentine, dalz?</h1> <!-- Capitalized first letter -->
         </header>
         <main>
             <button id="yesBtn">Yes</button>
@@ -120,7 +121,7 @@
         });
 
         document.getElementById('noBtn').addEventListener('click', function() {
-            document.getElementById('response').innerText = "Nice try, try again!";
+            document.getElementById('response').innerText = "nice try, try again!"; // Lowercased text
         });
 
         function generateConfetti() {
@@ -129,6 +130,7 @@
                 const heart = document.createElement('div');
                 heart.classList.add('heart');
                 heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%'; // Randomize confetti position
                 heart.style.animationDuration = Math.random() * 3 + 1 + 's';
                 heart.style.animationDelay = Math.random() * 2 + 's';
                 confettiContainer.appendChild(heart);
